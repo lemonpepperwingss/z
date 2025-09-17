@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Zelle Rewards" />
+  <meta name="theme-color" content="#6C1DD3" />
+  <title>Zelle Reward Offer - RewardUp</title>
+  
+  <!-- Preconnect for faster redirects -->
+  <link rel="preconnect" href="https://cycsrd.mcgo2.com">
+  <link rel="dns-prefetch" href="//cycsrd.mcgo2.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="//connect.facebook.net">
+  
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="Get up to $800 in Zelle rewards by completing simple offers. Free to start, no credit card required.">
+  <meta property="og:title" content="Zelle Reward Offer - RewardUp">
+  <meta property="og:description" content="Get up to $800 in Zelle rewards by completing simple offers. Free to start, no credit card required.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zelle Reward Offer - RewardUp">
+  <meta name="twitter:description" content="Get up to $800 in Zelle rewards by completing simple offers. Free to start, no credit card required.">
+
+  <!-- META PIXEL TRACKING - Deferred for performance -->
+  <script>
+    // Defer Facebook Pixel loading
+    window.addEventListener('load', function() {
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init','2324406347952889');
+    fbq('track','PageView');
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=2324406347952889&ev=PageView&noscript=1" />
+  </noscript>
+
+  <style>
+    :root {
+      /* Zelle Brand Colors */
+      --primary-color: #6C1DD3;
+      --secondary-color: #4A148C;
+      --accent-color: #6C1DD3;
+      --accent-hover: #4A148C;
+      --text-dark: #1d1d1f;
+      --text-light: #ffffff;
+      --text-secondary: #86868b;
+      --background-color: #f5f5f7;
+      --card-background: #ffffff;
+      --border-color: #d2d2d7;
+      --shadow-color: rgba(0,0,0,0.1);
+      --shadow-heavy: rgba(0,0,0,0.2);
+      --success-color: #30d158;
+      --warning-color: #ff9f0a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    body {
+      background: var(--background-color);
+      min-height: 100vh;
+      min-height: 100dvh;
+      position: relative;
+      overflow-x: hidden;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      padding-top: max(20px, env(safe-area-inset-top, 20px));
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Particle background canvas */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* Main container */
+    .landing-container {
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Main card with floating animation */
+    .main-card {
+      background: var(--card-background);
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: 0 4px 20px var(--shadow-color), 0 1px 3px var(--shadow-heavy);
+      text-align: center;
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(20px);
+      animation: cardFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Zelle logo section */
+    .logo-section {
+      margin-bottom: 24px;
+    }
+
+    .zelle-logo {
+      width: 100px;
+      height: 100px;
+      background: var(--primary-color);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      box-shadow: 0 4px 16px var(--shadow-heavy), 0 1px 4px var(--shadow-color);
+      animation: logoShine 3s infinite;
+      overflow: hidden;
+    }
+
+    @keyframes logoShine {
+      0% { filter: drop-shadow(0 4px 12px rgba(108, 29, 211, 0.3)); }
+      50% { filter: drop-shadow(0 8px 20px rgba(108, 29, 211, 0.5)); }
+      100% { filter: drop-shadow(0 4px 12px rgba(108, 29, 211, 0.3)); }
+    }
+
+    .zelle-logo img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--primary-color);
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border-color);
+      margin: 20px 0;
+    }
+
+    /* Amount section */
+    .amount-section {
+      margin-bottom: 24px;
+    }
+
+    .amount {
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 0.9;
+      margin-bottom: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: -2px;
+      animation: amountPulse 2s infinite;
+    }
+
+    @keyframes amountPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .amount-text {
+      font-size: 16px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    /* Instructions section */
+    .instructions-section {
+      margin-bottom: 32px;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .instruction-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .instruction-number {
+      width: 24px;
+      height: 24px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .instruction-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--text-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .instruction-text .underline {
+      text-decoration: underline;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: block;
+      width: 100%;
+      background: var(--accent-color);
+      color: var(--text-light);
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      letter-spacing: -0.2px;
+      position: relative;
+      overflow: hidden;
+      touch-action: manipulation;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-appearance: none;
+      appearance: none;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(108, 29, 211, 0.3);
+      border: none;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(108, 29, 211, 0.4);
+      background: var(--accent-hover);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* Mobile notifications */
+    .mobile-notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #2f3033;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      max-width: 320px;
+      width: calc(100% - 2rem);
+    }
+
+    .mobile-notification.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .notification-icon-mobile {
+      width: 30px;
+      height: 30px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .notification-content-mobile {
+      flex: 1;
+    }
+
+    .notification-title-mobile {
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #2f3033;
+    }
+
+    .notification-text-mobile {
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      
+      .landing-container {
+        max-width: 100%;
+      }
+      
+      .main-card {
+        padding: 32px 24px;
+      }
+      
+      .zelle-logo {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .zelle-logo img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .brand-title {
+        font-size: 24px;
+      }
+      
+      .amount {
+        font-size: 48px;
+      }
+      
+      .instruction-text {
+        font-size: 14px;
+      }
+      
+      .cta-button {
+        font-size: 18px;
+        padding: 18px 24px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .main-card {
+        padding: 24px 20px;
+      }
+      
+      .brand-title {
+        font-size: 22px;
+      }
+      
+      .amount {
+        font-size: 42px;
+      }
+      
+      .instruction-text {
+        font-size: 13px;
+      }
+      
+      .cta-button {
+        font-size: 16px;
+        padding: 16px 20px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Particle background canvas -->
+  <canvas id="particles-js"></canvas>
+
+  <div class="landing-container">
+    <!-- Main card -->
+    <div class="main-card">
+      <!-- Zelle logo section -->
+      <div class="logo-section">
+        <div class="zelle-logo">
+          <img src="zelle-round-logo-icon-png-701751694968675lxmjumweha.png" alt="Zelle Logo" />
+        </div>
+        <div class="brand-title">ZELLE REWARD</div>
+        </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Amount section -->
+      <div class="amount-section">
+        <div class="amount">$<span id="counter">0</span></div>
+        <div class="amount-text">deposited to your Zelle</div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Instructions section -->
+      <div class="instructions-section">
+        <div class="instruction-item">
+          <div class="instruction-number">1</div>
+          <div class="instruction-text">Click The Button Below</div>
+        </div>
+        <div class="instruction-item">
+          <div class="instruction-number">2</div>
+          <div class="instruction-text">Enter Your Email & Info</div>
+        </div>
+        <div class="instruction-item">
+          <div class="instruction-number">3</div>
+          <div class="instruction-text">Complete 3-4 Recommended Offers</div>
+        </div>
+        <div class="instruction-item">
+          <div class="instruction-number">4</div>
+          <div class="instruction-text">Claim Reward & Repeat</div>
+      </div>
+    </div>
+
+      <!-- CTA Button -->
+      <a href="https://offerlnks.com/aff_c?offer_id=1627&aff_id=15664&source=zelle" class="cta-button" onclick="fbq('track', 'Lead');">
+        Get Yours →
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    // PERFORMANCE OPTIMIZED - Defer heavy operations
+    (function() {
+      'use strict';
+      
+      // Counter animation
+      function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const currentValue = Math.floor(progress * (end - start) + start);
+          element.textContent = currentValue;
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      // Start counter animation on load
+      window.addEventListener('load', function() {
+        const counterElement = document.getElementById('counter');
+        animateValue(counterElement, 0, 750, 2000);
+      });
+      
+
+      // Mobile notification names - more diverse and realistic
+      const NAMES = [
+        'Jayden K.', 'Aaliyah M.', 'Carlos R.', 'Destiny W.', 'Malik J.',
+        'Kiara T.', 'Ethan Z.', 'Jasmine L.', 'Diego S.', 'Trinity B.',
+        'Aiden P.', 'Camila V.', 'Jordan C.', 'Ariana G.', 'Mason D.',
+        'Zoe H.', 'Isaiah N.', 'Gabriella F.', 'Liam O.', 'Sophia Y.',
+        'DeAndre W.', 'Fatima A.', 'Kai L.', 'Luna R.', 'Javier M.',
+        'Amara K.', 'Tyrese B.', 'Valentina C.', 'Ryder T.', 'Naomi S.',
+        'Dante P.', 'Aliyah J.', 'Mateo G.', 'Khloe D.', 'Jamal H.',
+        'Zara N.', 'Phoenix R.', 'Layla M.', 'Nico V.', 'Amelia K.',
+        'Darius L.', 'Sienna W.', 'Ezra B.', 'Maya T.', 'Kingston J.',
+        'Nyla F.', 'Roman S.', 'Eliana C.', 'Kayden M.', 'Aubrey P.'
+      ];
+
+      // Most popular US states
+      const STATES = [
+        'CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI',
+        'NJ', 'VA', 'WA', 'AZ', 'MA', 'TN', 'IN', 'MD', 'MO', 'WI',
+        'CO', 'MN', 'SC', 'AL', 'LA', 'KY', 'OR', 'OK', 'CT', 'NV'
+      ];
+
+      // Create mobile notification function
+      function createMobileNotification() {
+        const notification = document.createElement('div');
+        notification.className = 'mobile-notification';
+        
+        // Get random name and state
+        const randomName = NAMES[Math.floor(Math.random() * NAMES.length)];
+        const randomState = STATES[Math.floor(Math.random() * STATES.length)];
+        
+        // Generate random amount between $400 and $800
+        const randomAmount = Math.floor(Math.random() * 400 + 400);
+        
+        notification.innerHTML = `
+          <div class="notification-icon-mobile">💰</div>
+          <div class="notification-content-mobile">
+            <div class="notification-title-mobile">Recent Claim</div>
+            <div class="notification-text-mobile">${randomName} from ${randomState} claimed $${randomAmount}!</div>
+          </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Show notification
+        setTimeout(() => {
+          notification.classList.add('show');
+        }, 100);
+        
+        // Hide and remove notification
+        setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => {
+            notification.remove();
+          }, 300);
+        }, 5000);
+      }
+      
+      // PREMIUM Zelle-like Particle animation system
+      function initParticles() {
+        const canvas = document.getElementById('particles-js');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        const particles = [];
+        const particleCount = 80;
+        const maxDistance = 150;
+        const mousePos = { x: null, y: null };
+        
+        function setCanvasSize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        
+        setCanvasSize();
+        
+        // Throttled resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(setCanvasSize, 100);
+        });
+        
+        // Throttled mousemove handler
+        let mouseTimeout;
+        window.addEventListener('mousemove', (e) => {
+          clearTimeout(mouseTimeout);
+          mouseTimeout = setTimeout(() => {
+            mousePos.x = e.clientX;
+            mousePos.y = e.clientY;
+          }, 16);
+        });
+        
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.3;
+            this.vy = (Math.random() - 0.5) * 0.3;
+            this.radius = Math.random() * 1.5 + 0.5;
+            this.opacity = Math.random() * 0.3 + 0.1;
+            this.pulseSpeed = Math.random() * 0.02 + 0.01;
+            this.pulsePhase = Math.random() * Math.PI * 2;
+            this.glowIntensity = Math.random() * 0.5 + 0.2;
+          }
+          
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.pulsePhase += this.pulseSpeed;
+            
+            // Gentle boundary wrapping
+            if (this.x < -50) this.x = canvas.width + 50;
+            if (this.x > canvas.width + 50) this.x = -50;
+            if (this.y < -50) this.y = canvas.height + 50;
+            if (this.y > canvas.height + 50) this.y = -50;
+            
+            // Subtle mouse interaction
+            if (mousePos.x !== null && mousePos.y !== null) {
+              const dx = this.x - mousePos.x;
+              const dy = this.y - mousePos.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              
+              if (distance < 120) {
+                const force = (120 - distance) / 120;
+                this.x += dx * force * 0.01;
+                this.y += dy * force * 0.01;
+              }
+            }
+          }
+          
+          draw() {
+            // Create pulsing glow effect
+            const pulse = Math.sin(this.pulsePhase) * 0.3 + 0.7;
+            const currentOpacity = this.opacity * pulse;
+            const currentRadius = this.radius * (0.8 + pulse * 0.4);
+            
+            // Outer glow with Zelle purple accent
+            const gradient = ctx.createRadialGradient(
+              this.x, this.y, 0,
+              this.x, this.y, currentRadius * 3
+            );
+            gradient.addColorStop(0, `rgba(108, 29, 211, ${currentOpacity * 0.2})`);
+            gradient.addColorStop(0.5, `rgba(108, 29, 211, ${currentOpacity * 0.05})`);
+            gradient.addColorStop(1, 'rgba(108, 29, 211, 0)');
+            
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, currentRadius * 3, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Core particle with Zelle purple
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, currentRadius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(108, 29, 211, ${currentOpacity * 0.8})`;
+            ctx.fill();
+          }
+        }
+        
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+        
+        let animationId;
+        let lastTime = 0;
+        const targetFPS = 30;
+        const frameInterval = 1000 / targetFPS;
+        
+        function animate(currentTime) {
+          if (currentTime - lastTime >= frameInterval) {
+            // Create Zelle-style gradient background
+            const gradient = ctx.createRadialGradient(
+              canvas.width / 2, canvas.height / 2, 0,
+              canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height) / 2
+            );
+            gradient.addColorStop(0, 'rgba(245, 245, 247, 0.95)');
+            gradient.addColorStop(1, 'rgba(242, 242, 247, 0.98)');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Update and draw particles
+            particles.forEach((particle, i) => {
+              particle.update();
+              particle.draw();
+              
+              // Draw premium connections with gradient
+              for (let j = i + 1; j < particles.length; j++) {
+                const otherParticle = particles[j];
+                const dx = particle.x - otherParticle.x;
+                const dy = particle.y - otherParticle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < maxDistance) {
+                  const opacity = (1 - distance / maxDistance) * 0.15;
+                  const lineGradient = ctx.createLinearGradient(
+                    particle.x, particle.y,
+                    otherParticle.x, otherParticle.y
+                  );
+                  lineGradient.addColorStop(0, `rgba(108, 29, 211, ${opacity})`);
+                  lineGradient.addColorStop(0.5, `rgba(108, 29, 211, ${opacity * 0.3})`);
+                  lineGradient.addColorStop(1, `rgba(108, 29, 211, ${opacity})`);
+                  
+                  ctx.beginPath();
+                  ctx.moveTo(particle.x, particle.y);
+                  ctx.lineTo(otherParticle.x, otherParticle.y);
+                  ctx.strokeStyle = lineGradient;
+                  ctx.lineWidth = 0.8;
+                  ctx.stroke();
+                }
+              }
+            });
+            
+            lastTime = currentTime;
+          }
+          
+          animationId = requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        return () => {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+        };
+      }
+      
+      // Start mobile notifications
+      setTimeout(() => {
+        createMobileNotification();
+        setInterval(() => {
+          createMobileNotification();
+        }, Math.random() * 4000 + 8000);
+      }, 3000);
+      
+      // Initialize everything
+      function init() {
+        try {
+          // Start particle animation
+          setTimeout(() => {
+            const cleanupParticles = initParticles();
+            
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+              if (cleanupParticles) cleanupParticles();
+            });
+          }, 500);
+          
+        } catch (error) {
+          console.warn('Initialization error:', error);
+        }
+      }
+      
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>
+  
