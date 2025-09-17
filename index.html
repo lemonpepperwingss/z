@@ -166,12 +166,13 @@
     }
 
     .brand-title {
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 32px;
+      font-weight: 700;
       color: var(--primary-color);
-      letter-spacing: -0.5px;
+      letter-spacing: -0.8px;
       margin-bottom: 20px;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-shadow: 0 2px 4px rgba(108, 29, 211, 0.1);
     }
 
     .divider {
@@ -187,14 +188,15 @@
     }
 
     .amount {
-      font-size: 64px;
-      font-weight: 700;
+      font-size: 72px;
+      font-weight: 800;
       color: var(--primary-color);
       line-height: 0.9;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      letter-spacing: -2px;
+      letter-spacing: -3px;
       animation: amountPulse 2s infinite;
+      text-shadow: 0 4px 8px rgba(108, 29, 211, 0.2);
     }
 
     @keyframes amountPulse {
@@ -203,10 +205,11 @@
     }
 
     .amount-text {
-      font-size: 16px;
+      font-size: 18px;
       color: var(--text-secondary);
-      font-weight: 400;
+      font-weight: 500;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: 0.2px;
     }
 
     /* Instructions section */
@@ -243,11 +246,12 @@
     }
 
     .instruction-text {
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 18px;
+      font-weight: 600;
       line-height: 1.4;
       color: var(--text-dark);
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: -0.1px;
     }
 
     .instruction-text .underline {
@@ -261,13 +265,13 @@
       background: var(--accent-color);
       color: var(--text-light);
       text-align: center;
-      font-size: 17px;
-      font-weight: 600;
-      padding: 16px 32px;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 20px 32px;
       border-radius: 12px;
       text-decoration: none;
       transition: all 0.2s ease;
-      letter-spacing: -0.2px;
+      letter-spacing: -0.3px;
       position: relative;
       overflow: hidden;
       touch-action: manipulation;
@@ -276,14 +280,49 @@
       user-select: none;
       -webkit-appearance: none;
       appearance: none;
-      min-height: 50px;
+      min-height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 2px 8px rgba(108, 29, 211, 0.3);
+      box-shadow: 0 4px 12px rgba(108, 29, 211, 0.4);
       border: none;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    /* Form fallback CTA for TikTok WebView reliability */
+    .cta-form {
+      display: none;
+      width: 100%;
+    }
+
+    .cta-form-button {
+      width: 100%;
+      background: var(--accent-color);
+      color: var(--text-light);
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 20px 32px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(108, 29, 211, 0.4);
+      transition: all 0.2s ease;
+      letter-spacing: -0.3px;
+      position: relative;
+      overflow: hidden;
+      touch-action: manipulation;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-appearance: none;
+      appearance: none;
+      min-height: 60px;
+      -webkit-tap-highlight-color: rgba(108, 29, 211, 0.3);
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
     }
 
     .cta-button::before {
@@ -391,15 +430,15 @@
       }
       
       .brand-title {
-        font-size: 24px;
+        font-size: 28px;
       }
       
       .amount {
-        font-size: 48px;
+        font-size: 56px;
       }
       
       .instruction-text {
-        font-size: 14px;
+        font-size: 16px;
       }
       
       .cta-button {
@@ -414,20 +453,27 @@
       }
       
       .brand-title {
-        font-size: 22px;
+        font-size: 26px;
       }
       
       .amount {
-        font-size: 42px;
+        font-size: 48px;
       }
       
       .instruction-text {
-        font-size: 13px;
+        font-size: 15px;
       }
       
       .cta-button {
-        font-size: 16px;
+        font-size: 17px;
         padding: 16px 20px;
+      }
+    }
+
+    /* TikTok WebView specific - prevent zoom on input focus */
+    @media screen and (max-width: 480px) {
+      input, textarea, select {
+        font-size: 16px !important;
       }
     }
   </style>
@@ -482,8 +528,17 @@
 
       <!-- CTA Button -->
       <a href="https://offerlnks.com/aff_c?offer_id=1627&aff_id=15664&source=zelle" class="cta-button" onclick="fbq('track', 'Lead');">
-        Get Yours →
+        Get $750 Now →
       </a>
+
+      <!-- Form fallback CTA for TikTok WebView reliability -->
+      <form action="https://offerlnks.com/aff_c?offer_id=1627&aff_id=15664&source=zelle" method="get" class="cta-form" id="fallback-cta">
+        <input type="hidden" name="cb" value="ZELLE">
+        <input type="hidden" name="t" value="" id="timestamp">
+        <button type="submit" class="cta-form-button" onclick="fbq('track', 'Lead');">
+          Get $750 Now →
+        </button>
+      </form>
 
     </div>
   </div>
@@ -742,6 +797,39 @@
         };
       }
       
+      // TikTok WebView optimization: Show form fallback if anchor fails
+      function setupTikTokWebViewOptimization() {
+        const ctaButton = document.querySelector('.cta-button');
+        const ctaForm = document.querySelector('.cta-form');
+        const timestampInput = document.getElementById('timestamp');
+        
+        // Set timestamp for form
+        if (timestampInput) {
+          timestampInput.value = Date.now();
+        }
+        
+        // If anchor link fails to work, show form fallback
+        let anchorClicked = false;
+        
+        ctaButton.addEventListener('click', function(e) {
+          anchorClicked = true;
+          // If we're still here after a short delay, anchor probably failed
+          setTimeout(() => {
+            if (anchorClicked) {
+              ctaButton.style.display = 'none';
+              ctaForm.style.display = 'block';
+            }
+          }, 1000);
+        });
+        
+        // Reset if user navigates back
+        window.addEventListener('pageshow', function() {
+          anchorClicked = false;
+          ctaButton.style.display = 'block';
+          ctaForm.style.display = 'none';
+        });
+      }
+
       // Start mobile notifications
       setTimeout(() => {
         createMobileNotification();
@@ -762,6 +850,9 @@
               if (cleanupParticles) cleanupParticles();
             });
           }, 500);
+          
+          // TikTok WebView optimizations
+          setupTikTokWebViewOptimization();
           
         } catch (error) {
           console.warn('Initialization error:', error);
